@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
 
-  "name": "My Reading Helper",
-  "description": "This extension Will help with reading articles",
-  "version": "1.0",
+  "name": "QuikFo",
+  "description": "Get the information you want without leaving your content",
+  "version": "0.0",
 
   "browser_action": {
     "default_icon": "icon.png",
