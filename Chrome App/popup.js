@@ -32,4 +32,7 @@ function myFunction() {
 
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
+	var encode = encodeURIComponent(word);
+	document.getElementById("wolf").innerHTML = "<iframe id=\"if1\" width=\"100%\" height=\"100%\" style=\"visibility:visible\" FRAMEBORDER=\"0\" src=http://m.wolframalpha.com/input/?i="+encode+"></iframe>";
+	document.getElementById("wiki").innerHTML = "<iframe id=\"if1\" width=\"100%\" height=\"250\" style=\"visibility:visible\" FRAMEBORDER=\"0\" src=http://en.m.wikipedia.org/wiki/"+word+"></iframe>";
 }
