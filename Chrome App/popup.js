@@ -1,5 +1,14 @@
 function processData(myArr){
-	return myArr[0].text;	
+	var i;
+	var k = myArr.length;
+	var string = "";
+	if(myArr.length > 3){
+		k = 3;
+	}
+	for(i = 0; i < k; i++){
+		string += myArr[i].text + "<br>";
+	}
+	return string;	
 }
 document.addEventListener('DOMContentLoaded', function () {
 document.getElementById("submit").addEventListener("click", myFunction);
