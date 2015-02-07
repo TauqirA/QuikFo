@@ -6,32 +6,36 @@
  -->
 <html>
   <head>
-    <title>Getting Started Extension's Popup</title>
-    <style>
-      body {
-        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-        font-size: 100%;
-      }
-      #status {
-        /* avoid an excessively wide status text */
-        white-space: pre;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        max-width: 400px;
-      }
-    </style>
-
+    <title>SearchInfo</title>
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Include bootstrap stylesheets -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+	<script src="popup.js"></script>
     <!--
       - JavaScript and HTML must be in separate files: see our Content Security
       - Policy documentation[1] for details and explanation.
       -
       - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
      -->
-    <script src="popup.js"></script>
   </head>
   <body>
-    <div id="status"></div>
-    <img id="image-result" hidden>
+  <form id="search">
+    <div class="input-group">
+      <input id="text" type="text" class="form-control" placeholder="Search for...">
+      <span class="input-group-btn">
+        <button id="submit" class="btn btn-default" type="button">Go!</button>
+      </span>
+    </div><!-- /input-group -->
+	</form>
+<p id="demo">
+  <footer class="footer">
+        <p>&copy; Tauqir Abdullah 2014</p>
+      </footer>
+    <!-- JavaScript placed at the end of the document so the pages load faster -->
+    <!-- Optional: Include the jQuery library -->
+    <script src="jquery.min.js"></script>
+    <!-- Optional: Incorporate the Bootstrap JavaScript plugins -->
+    <script src="bootstrap.min.js"></script>
   </body>
 </html>
 
