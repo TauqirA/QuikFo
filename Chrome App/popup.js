@@ -14,20 +14,25 @@ function processData(myArr) {
 }
 window.addEventListener('load', function(evt) {
 var buttonID = document.getElementById("button");
+var textID = document.getElementById("text");
 if(buttonID)
 	document.getElementById("button").addEventListener('click', myFunction);
+if(textID){
 	document.getElementById("text").addEventListener('keypress', function (e) {
     var key = e.which || e.keyCode;
     if (key == 13) { // 13 is enter
       myFunction();
     }
 });
+document.getElementById("text").focus();
+
 chrome.tabs.executeScript(null,
       {code:"window.getSelection().toString()"},function(resultArr){
 	  var str = ""+resultArr;
 		document.getElementById("text").value = str.trim();
 		myFunction();}
 		);
+}
 });
 function myFunction() {
     var word = document.getElementById("text").value.toLowerCase();
