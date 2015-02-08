@@ -11,4 +11,4 @@ APIs used:
 http://developer.wordnik.com/ for definitions
 
 What it does:
-Provide a small window for a user to visit main pages without leaving there current page. 
+Provide a small window for a user to visit many pages without leaving there current page in a fast and seamless way.
