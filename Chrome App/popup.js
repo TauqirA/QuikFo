@@ -18,10 +18,15 @@ function processData(myArr) {
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("submit").addEventListener("click", myFunction);
 });
+chrome.commands.onCommand.addListener(function(command) {
+        console.log('Command:', command);
+      });
 chrome.tabs.executeScript(null,
       {code:"window.getSelection().toString()"},function(resultArr){
 	  var str = ""+resultArr;
-		document.getElementById("text").value = str.trim()});
+		document.getElementById("text").value = str.trim();
+		myFunction();}
+		);
 function myFunction() {
     var word = document.getElementById("text").value.toLowerCase();
 	if(document.getElementById("Define").checked){
