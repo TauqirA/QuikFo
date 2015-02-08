@@ -18,7 +18,10 @@ function processData(myArr) {
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("submit").addEventListener("click", myFunction);
 });
-
+chrome.tabs.executeScript(null,
+      {code:"window.getSelection().toString()"},function(resultArr){
+	  var str = ""+resultArr;
+		document.getElementById("text").value = str.trim()});
 function myFunction() {
     var word = document.getElementById("text").value.toLowerCase();
 	if(document.getElementById("Define").checked){
@@ -58,7 +61,5 @@ function myFunction() {
 	document.getElementById("wiki").innerHTML = "";
 	}
 	
-	/*chrome.tabs.executeScript(null,
-      {code:"document.body.style.backgroundColor='red'"});
-	    window.close();*/
+	
 }
