@@ -2,9 +2,6 @@ function processData(myArr) {
     var i;
     var k = myArr.length;
     var string = "<p>";
-    if (myArr.length > 3) {
-        k = 3;
-    }
     for (i = 0; i < k; i++) {
         var str = "   "+(i + 1) + ". <b>" + myArr[i].partOfSpeech + "- </b>" + myArr[i].text + "<br>";
         string += str;
@@ -15,18 +12,23 @@ function processData(myArr) {
 
     return string+"</p>";
 }
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById("submit").addEventListener("click", myFunction);
+window.addEventListener('load', function(evt) {
+var buttonID = document.getElementById("button");
+if(buttonID)
+	document.getElementById("button").addEventListener('click', myFunction);
+	document.getElementById("text").addEventListener('keypress', function (e) {
+    var key = e.which || e.keyCode;
+    if (key == 13) { // 13 is enter
+      myFunction();
+    }
 });
-chrome.commands.onCommand.addListener(function(command) {
-        console.log('Command:', command);
-      });
 chrome.tabs.executeScript(null,
       {code:"window.getSelection().toString()"},function(resultArr){
 	  var str = ""+resultArr;
 		document.getElementById("text").value = str.trim();
 		myFunction();}
 		);
+});
 function myFunction() {
     var word = document.getElementById("text").value.toLowerCase();
 	if(document.getElementById("Define").checked){
@@ -47,20 +49,20 @@ function myFunction() {
 	}
 	var encode = encodeURIComponent(word);
 	if(document.getElementById("wolfA").checked){
-		document.getElementById("wolf").innerHTML = "<iframe id=\"if1\" width=\"100%\" height=\"250\" style=\"visibility:visible\" FRAMEBORDER=\"0\" src=http://m.wolframalpha.com/input/?i="+encode+"></iframe>";
+		document.getElementById("wolf").innerHTML = "<iframe id=\"if1\" width=\"100%\" height=\"325\" style=\"visibility:visible\" FRAMEBORDER=\"0\" src=http://m.wolframalpha.com/input/?i="+encode+"></iframe>";
 	}
 	else{
 	document.getElementById("wolf").innerHTML = "";
 	}
-	if(document.getElementById("bingS").checked){
-		document.getElementById("bing").innerHTML = 
-		"<iframe id=\"if1\" width=\"100%\" height=\"250\" style=\"visibility:visible\" FRAMEBORDER=\"0\" src=http://m.bing.com/search?q="+encode+"></iframe>";
+	if(document.getElementById("searchD").checked){
+		document.getElementById("searchddg").innerHTML = 
+		"<iframe id=\"if1\" width=\"100%\" height=\"325\" style=\"visibility:visible\" FRAMEBORDER=\"0\" src=https://duckduckgo.com/?q="+encode+"></iframe>";
 	}
 	else{
-	document.getElementById("bing").innerHTML = "";
+	document.getElementById("searchddg").innerHTML = "";
 	}
 	if(document.getElementById("wikip").checked){
-		document.getElementById("wiki").innerHTML = "<iframe id=\"if1\" width=\"100%\" height=\"250\" style=\"visibility:visible\" FRAMEBORDER=\"0\" src=http://en.m.wikipedia.org/wiki/"+word+"></iframe>";
+		document.getElementById("wiki").innerHTML = "<iframe id=\"if1\" width=\"100%\" height=\"325\" style=\"visibility:visible\" FRAMEBORDER=\"0\" src=http://en.m.wikipedia.org/wiki/"+word+"></iframe>";
 	}
 	else{
 	document.getElementById("wiki").innerHTML = "";
