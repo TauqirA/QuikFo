@@ -61,7 +61,7 @@ function myFunction() {
     }
     if (document.getElementById("searchD").checked) {
         document.getElementById("searchddg").innerHTML =
-            "<iframe id=\"if1\" width=\"100%\" height=\"325\" style=\"visibility:visible\" FRAMEBORDER=\"0\" src=https://duckduckgo.com/?q=" + encode + "></iframe>";
+            "<a href=\"https://duckduckgo.com/?q=" + encode+"\" target=\"_blank\">Open Search in New Tab </a><iframe id=\"if1\" width=\"100%\" height=\"325\" style=\"visibility:visible\" FRAMEBORDER=\"0\" src=https://duckduckgo.com/?q=" + encode + "></iframe>";
     } else {
         document.getElementById("searchddg").innerHTML = "";
     }
