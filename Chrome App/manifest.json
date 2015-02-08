@@ -1,33 +1,31 @@
 {
-  "manifest_version": 2,
+    "manifest_version": 2,
 
-  "name": "QuikFo",
-  "description": "Get the information you want without leaving your content",
-  "version": "0.0",
+    "name": "QuikFo",
+    "description": "Get the information you want without leaving your content",
+    "version": "0.0",
 
-  "browser_action": {
-    "default_icon": "icon.png",
-    "default_popup": "popup.html"
-  },
-  "permissions": [
-    "activeTab",
-	"tabs",
-   "<all_urls>",
-    "https://ajax.googleapis.com/"
-  ],
-  "content_scripts": [
-   {
-     "matches": ["<all_urls>"],
-     "js": ["popup.js","jquery.min.js"],
-     "run_at": "document_start",
-     "all_frames": true
-   }
- ],
-   "commands": {
-          "_execute_browser_action": {
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "activeTab",
+        "tabs",
+        "<all_urls>",
+        "https://ajax.googleapis.com/"
+    ],
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "js": ["popup.js", "jquery.min.js"],
+        "run_at": "document_start",
+        "all_frames": true
+    }],
+    "commands": {
+        "_execute_browser_action": {
             "suggested_key": {
-              "default": "Ctrl+Shift+A"
+                "default": "Ctrl+Shift+A"
             }
-          }
         }
+    }
 }

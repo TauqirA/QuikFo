@@ -5,47 +5,50 @@
  value "popup.html".
  -->
 <html>
-  <head>
+
+<head>
     <title>SearchInfo</title>
-	 <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Include bootstrap stylesheets -->
     <link href="bootstrap.min.css" rel="stylesheet">
-	<script src="popup.js"></script>
+    <script src="popup.js"></script>
     <!--
       - JavaScript and HTML must be in separate files: see our Content Security
       - Policy documentation[1] for details and explanation.
       -
       - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
      -->
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="input-group">
-      <input id="text" type="text" class="form-control" placeholder="Learn More About...">
-      <span class="input-group-btn">
+        <input id="text" type="text" class="form-control" placeholder="Learn More About...">
+        <span class="input-group-btn">
         <button id="button" class="btn btn-default" type="submit"/><img src="Search-icon.png" alt="Learn" style="width:25px;height:25px"></button>
       </span>
-    </div><!-- /input-group -->
-	<label class="checkbox-inline">
-      <input type="checkbox" id="Define" checked>Define
+    </div>
+    <!-- /input-group -->
+    <label class="checkbox-inline">
+        <input type="checkbox" id="Define" checked>Define
     </label>
     <label class="checkbox-inline">
-      <input type="checkbox" id="wikip">Wiki
+        <input type="checkbox" id="wikip">Wiki
     </label>
     <label class="checkbox-inline">
-      <input type="checkbox" id="wolfA">WolframAlpha
+        <input type="checkbox" id="wolfA">WolframAlpha
     </label>
-	<label class="checkbox-inline">
-      <input type="checkbox" id="searchD">Search
+    <label class="checkbox-inline">
+        <input type="checkbox" id="searchD">Search
     </label>
-<p id="definition"></p>
-<div id="wiki"></div>
-<div id="wolf"></div>
-<div id="searchddg"></div>
+    <p id="definition"></p>
+    <div id="wiki"></div>
+    <div id="wolf"></div>
+    <div id="searchddg"></div>
     <!-- JavaScript placed at the end of the document so the pages load faster -->
     <!-- Optional: Include the jQuery library -->
     <script src="jquery.min.js"></script>
     <!-- Optional: Incorporate the Bootstrap JavaScript plugins -->
     <script src="bootstrap.min.js"></script>
-  </body>
-</html>
+</body>
 
+</html>
