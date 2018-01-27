@@ -16,3 +16,9 @@ http://developer.wordnik.com/ for definitions
 
 What it does:
 Provide a small window for a user to visit many pages without leaving there current page in a fast and seamless way.
+
+![picture alt](https://raw.githubusercontent.com/TauqirA/QuikFo/master/Picture1.png)
+
+![picture alt](https://raw.githubusercontent.com/TauqirA/QuikFo/master/Picture2.png)
+
+![picture alt](https://raw.githubusercontent.com/TauqirA/QuikFo/master/Picture3.png)
